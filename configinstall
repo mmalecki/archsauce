@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-utils chromium clang physlock sudo keychain tcpdump kexec-tools
