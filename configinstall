@@ -1,2 +1,22 @@
 #!/usr/bin/env bash
-sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-utils chromium clang physlock sudo keychain tcpdump kexec-tools
+# install packages I use
+sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-utils chromium clang sudo keychain tcpdump kexec-tools
+
+# install yaourt with its dependencies, if not already installed
+pacman -Q | grep -q package-query
+if [ $? -ne 0 ]; then
+  curl https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz | tar -zxf-
+  cd package-query
+  sudo makepkg -si --noconfirm
+  cd ..
+fi
+
+pacman -Q | grep -q yaourt
+if [ $? -ne 0 ]; then
+  curl https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz | tar -zxf-
+  cd yaourt
+  sudo makepkg -si --noconfirm
+  cd ..
+fi
+
+yaourt -S physlock
