@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 # install packages I use
-sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-utils chromium clang keychain tcpdump kexec-tools ghc {gnu,openbsd}-netcat xorg-server awesome clojure
+sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-utils chromium clang keychain tcpdump kexec-tools ghc openbsd-netcat xorg-server awesome clojure wpa_actiond mosh
 
 # install yaourt with its dependencies, if not already installed
 pacman -Q | grep -q package-query
 if [ $? -ne 0 ]; then
   curl https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz | tar -zxf-
   cd package-query
-  sudo makepkg -si --noconfirm
+  makepkg -s
+  sudo pacman -U package-query-*.xz
   cd ..
 fi
 
@@ -15,8 +16,9 @@ pacman -Q | grep -q yaourt
 if [ $? -ne 0 ]; then
   curl https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz | tar -zxf-
   cd yaourt
-  sudo makepkg -si --noconfirm
+  makepkg -s
+  sudo pacman -U yaourt-*.xz
   cd ..
 fi
 
-yaourt -S --needed physlock
+yaourt -S physlock ttf-inconsolata-tz
