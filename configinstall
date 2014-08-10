@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # install packages I use
-sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-utils chromium clang keychain tcpdump kexec-tools ghc openbsd-netcat xorg-server awesome clojure wpa_actiond mosh nmap
+sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-utils chromium clang keychain tcpdump kexec-tools ghc openbsd-netcat xorg-server awesome clojure wpa_actiond mosh nmap ctags
 
 # install yaourt with its dependencies, if not already installed
 pacman -Q | grep -q package-query
