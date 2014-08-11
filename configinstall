@@ -10,6 +10,7 @@ if [ $? -ne 0 ]; then
   makepkg -s
   sudo pacman -U package-query-*.xz
   cd ..
+  rm -rf package-query
 fi
 
 pacman -Q | grep -q yaourt
@@ -19,6 +20,7 @@ if [ $? -ne 0 ]; then
   makepkg -s
   sudo pacman -U yaourt-*.xz
   cd ..
+  rm -rf yaourt
 fi
 
 yaourt -S physlock ttf-inconsolata-dz scrub
