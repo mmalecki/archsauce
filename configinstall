@@ -21,4 +21,4 @@ if [ $? -ne 0 ]; then
   cd ..
 fi
 
-yaourt -S physlock ttf-inconsolata-dz
+yaourt -S physlock ttf-inconsolata-dz scrub
