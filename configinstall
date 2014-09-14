@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # install packages I use
-sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-utils chromium clang keychain tcpdump kexec-tools ghc openbsd-netcat xorg-server awesome clojure wpa_actiond mosh nmap ctags wget pass acpi acpid tor scrot transmission-cli hdparm pcsclite ccid iperf
+sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-utils chromium clang keychain tcpdump kexec-tools ghc openbsd-netcat xorg-server awesome clojure wpa_actiond mosh nmap ctags wget pass acpi acpid tor scrot transmission-cli hdparm pcsclite ccid iperf ifplugd lsof cpio parted fuse rsync cmake pulseaudio
 
 # install yaourt with its dependencies, if not already installed
 pacman -Q | grep -q package-query
@@ -23,4 +23,4 @@ if [ $? -ne 0 ]; then
   rm -rf yaourt
 fi
 
-yaourt -S physlock ttf-inconsolata-dz scrub
+yaourt -S physlock ttf-inconsolata-dz scrub uuid google-talkplugin
