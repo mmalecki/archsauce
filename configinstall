@@ -24,3 +24,8 @@ if [ $? -ne 0 ]; then
 fi
 
 yaourt -S physlock ttf-inconsolata-dz scrub uuid google-talkplugin
+
+mkdir -p "$HOME/.local/share/applications"
+xdg-mime default /usr/share/applications/firefox.desktop x-scheme-handler/http
+xdg-mime default /usr/share/applications/firefox.desktop x-scheme-handler/https
+xdg-mime default /usr/share/applications/firefox.desktop text/html
