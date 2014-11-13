@@ -1,27 +1,21 @@
 #!/usr/bin/env bash
+
+install_from_aur() {
+  package="$1"
+  curl "https://aur.archlinux.org/packages/$(echo $package | cut -c1-2)/$package/$package.tar.gz" | tar -zxf-
+  cd "$package"
+  makepkg -s
+  sudo pacman -U "$package-*.xz"
+  cd ..
+  rm -rf "$package"
+}
+
 # install packages I use
 sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-utils chromium clang clang-analyzer keychain tcpdump kexec-tools ghc openbsd-netcat xorg-server xorg-xinit awesome clojure wpa_actiond mosh nmap ctags wget pass acpi acpid tor scrot transmission-cli hdparm pcsclite ccid iperf ifplugd lsof cpio parted fuse rsync cmake pulseaudio cronie perf firefox mongodb bzr parallel mercurial gdb zip unzip docker
 
 # install yaourt with its dependencies, if not already installed
-pacman -Q | grep -q package-query
-if [ $? -ne 0 ]; then
-  curl https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz | tar -zxf-
-  cd package-query
-  makepkg -s
-  sudo pacman -U package-query-*.xz
-  cd ..
-  rm -rf package-query
-fi
-
-pacman -Q | grep -q yaourt
-if [ $? -ne 0 ]; then
-  curl https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz | tar -zxf-
-  cd yaourt
-  makepkg -s
-  sudo pacman -U yaourt-*.xz
-  cd ..
-  rm -rf yaourt
-fi
+pacman -Q package-query || install_from_aur package-query
+pacman -Q yaourt || install_from_aur yaourt
 
 yaourt -S physlock ttf-inconsolata-dz scrub uuid google-talkplugin
 
