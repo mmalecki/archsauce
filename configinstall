@@ -11,7 +11,7 @@ install_from_aur() {
 }
 
 # install packages I use
-sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-utils chromium clang clang-analyzer keychain tcpdump kexec-tools ghc openbsd-netcat xorg-server xorg-xinit awesome clojure wpa_actiond mosh nmap ctags wget pass acpi acpid tor scrot transmission-cli hdparm pcsclite ccid iperf ifplugd lsof cpio parted fuse rsync cmake pulseaudio cronie perf firefox mongodb bzr parallel mercurial gdb zip unzip docker imagemagick gimp xorg-xrandr vlc mplayer go texlive-most elasticsearch pv
+sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-utils chromium clang clang-analyzer keychain tcpdump kexec-tools ghc openbsd-netcat xorg-server xorg-xinit awesome clojure wpa_actiond mosh nmap ctags wget pass acpi acpid tor scrot transmission-cli hdparm pcsclite ccid iperf ifplugd lsof cpio parted fuse rsync cmake pulseaudio cronie perf firefox mongodb bzr parallel mercurial gdb zip unzip docker imagemagick gimp xorg-xrandr vlc mplayer go texlive-most elasticsearch pv sysstat
 
 # install yaourt with its dependencies, if not already installed
 pacman -Q package-query || install_from_aur package-query
