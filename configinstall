@@ -22,6 +22,6 @@ yaourt -S physlock ttf-inconsolata-dz scrub uuid google-talkplugin
 sudo systemctl enable pcscd
 
 mkdir -p "$HOME/.local/share/applications"
-xdg-mime default /usr/share/applications/firefox.desktop x-scheme-handler/http
-xdg-mime default /usr/share/applications/firefox.desktop x-scheme-handler/https
-xdg-mime default /usr/share/applications/firefox.desktop text/html
+xdg-mime default /usr/share/applications/chromium.desktop x-scheme-handler/http
+xdg-mime default /usr/share/applications/chromium.desktop x-scheme-handler/https
+xdg-mime default /usr/share/applications/chromium.desktop text/html
