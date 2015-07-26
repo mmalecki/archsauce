@@ -17,7 +17,7 @@ sudo pacman -S --needed base-devel whois dnsutils gvim zsh strace awesome alsa-u
 pacman -Q package-query || install_from_aur package-query
 pacman -Q yaourt || install_from_aur yaourt
 
-yaourt -S physlock ttf-inconsolata-dz scrub uuid google-talkplugin
+yaourt -S physlock ttf-inconsolata-dz scrub uuid google-talkplugin opam
 
 sudo systemctl enable pcscd
 
